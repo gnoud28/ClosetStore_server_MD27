@@ -47,14 +47,13 @@ NhanHang.create=function(data,result){
    });
 }
 NhanHang.update=function(array,result){
-    db.query("UPDATE NhanHang SET TenNH=?,ThongtinNH=? WHERE MaNH=?", [array.MaNH,array.TenNH,array.ThongtinNH],function(err,updatereutl){
-        if(err){
+    db.query("UPDATE NhanHang SET TenNH=?,ThongtinNH=? WHERE MaNH=?", [array.TenNH, array.ThongtinNH, array.MaNH], function(err, updateResult) {
+        if (err) {
             result(null);
-            }
-            else{
-                result(array);
-              
-            }
-       });
+        } else {
+            result(array);
+        }
+    });
+    
 }
 module.exports=NhanHang;

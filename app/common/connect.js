@@ -3,9 +3,9 @@ var mysql=require('mysql2');
 
 var connection = mysql.createConnection({
     host: 'sql.freedb.tech',
-    user: 'freedb_duongnv',
-    password: '#2zzN*z##%&NAZB',
-    database: 'freedb_ClosetStore',
+    user: 'freedb_Gnoud28',
+    password: 'U*Wm9nvf*h543Sg',
+    database: 'freedb_ClosetStore_server',
     connectTimeout: 20000 
 });
 

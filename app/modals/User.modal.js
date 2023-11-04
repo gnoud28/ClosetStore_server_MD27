@@ -3,8 +3,8 @@ const db=require('../common/connect');
 const Users = function (Users) {
     this.maND = Users.maND;
     this.tenND = Users.tenND;
-    this.MatkhauND = Users.MatkhauND;
-    this.Sdtnd = Users.Sdtnd;
+    this.MatKhauND = Users.MatKhauND;
+    this.SDTND = Users.SDTND;
     this.Email = Users.Email;
 }
 Users.get_all = function (result) {
@@ -49,7 +49,7 @@ Users.create=function(data,result){
    });
 }
 Users.update=function(array,result){
-    db.query("UPDATE Users SET tenND=?,MatkhauND=?,Email=?,Sdtnd=? WHERE maND=?", [array.tenND,array.MatkhauND,array.Email,array.Sdtnd,array.maND],function(err,updatereutl){
+    db.query("UPDATE Users SET tenND=?,MatKhauND=?,Email=?,SDTND=? WHERE maND=?", [array.tenND,array.MatKhauND,array.Email,array.SDTND,array.maND],function(err,updatereutl){
         if(err){
             result(null);
             }
