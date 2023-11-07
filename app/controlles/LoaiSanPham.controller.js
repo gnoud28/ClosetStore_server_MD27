@@ -4,7 +4,6 @@ exports.get_list=function(req,res){
     LoaiSanPham.get_all(function(data){
     res.send({result:data});
    });
-   
 
 }
 

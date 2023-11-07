@@ -1,1 +1,59 @@
-<h1>Oke em </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Quản Trị Đơn Giản</title>
+    <style>
+        /* CSS cho giao diện */
+        /* ... */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Trang Quản Trị</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#users">Quản lý Người Dùng</a></li>
+            <li><a href="#products">Quản lý Sản Phẩm</a></li>
+            <!-- Thêm các mục menu khác tại đây -->
+        </ul>
+    </nav>
+
+    <main>
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <!-- Nội dung cho trang Dashboard -->
+        </section>
+
+        <section id="users" style="display: none;">
+            <h2>Quản lý Người Dùng</h2>
+            <!-- Nội dung cho trang Quản lý Người Dùng -->
+        </section>
+
+        <section id="products" style="display: none;">
+            <h2>Quản lý Sản Phẩm</h2>
+            <!-- Nội dung cho trang Quản lý Sản Phẩm -->
+        </section>
+        <!-- Thêm các section khác tương tự -->
+    </main>
+
+    <script>
+        // JavaScript để xử lý sự kiện click menu
+        const navLinks = document.querySelectorAll('nav ul li a');
+        const sections = document.querySelectorAll('main section');
+
+        navLinks.forEach((link, index) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                sections.forEach((section) => {
+                    section.style.display = 'none';
+                });
+                sections[index].style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

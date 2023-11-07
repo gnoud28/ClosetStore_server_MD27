@@ -5,6 +5,8 @@ const Users = function (Users) {
     this.tenND = Users.tenND;
     this.MatKhauND = Users.MatKhauND;
     this.SDTND = Users.SDTND;
+    this.DiachiND = Users.DiachiND;
+    this.TuoiND = Users.TuoiND;
     this.Email = Users.Email;
 }
 Users.get_all = function (result) {
@@ -49,7 +51,7 @@ Users.create=function(data,result){
    });
 }
 Users.update=function(array,result){
-    db.query("UPDATE Users SET tenND=?,MatKhauND=?,Email=?,SDTND=? WHERE maND=?", [array.tenND,array.MatKhauND,array.Email,array.SDTND,array.maND],function(err,updatereutl){
+    db.query("UPDATE Users SET tenND=?,MatKhauND=?,Email=?,DiachiND=?,TuoiND=?,SDTND=? WHERE maND=?", [array.tenND,array.MatKhauND,array.Email,array.DiachiND,array.TuoiND,array.SDTND,array.maND],function(err,updatereutl){
         if(err){
             result(null);
             }
