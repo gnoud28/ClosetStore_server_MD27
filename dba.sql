@@ -1,0 +1,66 @@
+CREATE TABLE Users (
+    maND INT AUTO_INCREMENT PRIMARY KEY ,
+    tenND VARCHAR(255),
+    MatKhauND VARCHAR(255),
+    SDTND VARCHAR(255),
+    Email VARCHAR(255)
+);
+
+CREATE TABLE LoaiSanPham
+(
+    MaLoai INT AUTO_INCREMENT PRIMARY KEY ,
+    TenLoai VARCHAR(255),
+    HinhanhLSP VARCHAR(255)
+);
+
+CREATE TABLE NhanHang
+(
+    MaNH INT AUTO_INCREMENT PRIMARY KEY ,
+    TenNH VARCHAR(255), 
+    ThongtinNH VARCHAR(255)
+);
+
+CREATE TABLE SanPham
+(
+    maSP INT AUTO_INCREMENT PRIMARY KEY ,
+    TenSP VARCHAR(255),
+    GiaSP INT ,
+    HinhanhSP VARCHAR(255),
+    Mota VARCHAR(255),
+    MaLoai INT,
+    MaNH INT,
+    FOREIGN KEY (MaLoai) REFERENCES LoaiSanPham(MaLoai),
+    FOREIGN KEY (MaNH) REFERENCES NhanHang(MaNH)
+);
+
+CREATE TABLE Item 
+(
+    MaCTSP INT AUTO_INCREMENT PRIMARY KEY ,
+    TenSP VARCHAR(255),
+    SoLuong INT ,
+    HinhANhITEM VARCHAR(255)
+);
+
+CREATE TABLE DonHang 
+(
+    MaDH INT AUTO_INCREMENT PRIMARY KEY ,
+    maND INT,
+    tenND VARCHAR(225),
+    DiaChi VARCHAR(255),
+    Sdt INT ,
+    Email VARCHAR(255),
+    SoLuong VARCHAR(255),
+    TongTien INT,
+    TrangThai VARCHAR(255),
+    NgayTao DATE,
+    FOREIGN KEY (maND) REFERENCES Users(maND)
+);
+
+CREATE TABLE GioHang 
+(
+    MaSPGH INT AUTO_INCREMENT PRIMARY KEY ,
+    TenSPGH VARCHAR(255),
+    GiaSPGH INT ,
+    HinhanhSPGH VARCHAR(255),
+    SoLuongSPGH INT 
+);

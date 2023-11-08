@@ -8,6 +8,7 @@ const Users = function (Users) {
     this.DiachiND = Users.DiachiND;
     this.TuoiND = Users.TuoiND;
     this.Email = Users.Email;
+    this.HinhAnhND = Users.HinhAnhND;
 }
 Users.get_all = function (result) {
     db.query("SELECT * FROM Users", function (err, Users) {
@@ -51,7 +52,7 @@ Users.create=function(data,result){
    });
 }
 Users.update=function(array,result){
-    db.query("UPDATE Users SET tenND=?,MatKhauND=?,Email=?,DiachiND=?,TuoiND=?,SDTND=? WHERE maND=?", [array.tenND,array.MatKhauND,array.Email,array.DiachiND,array.TuoiND,array.SDTND,array.maND],function(err,updatereutl){
+    db.query("UPDATE Users SET tenND=?,MatKhauND=?,Email=?,DiachiND=?,TuoiND=?,SDTND=?, HinhAnhND=? WHERE maND=?", [array.tenND,array.HinhAnhND,array.MatKhauND,array.Email,array.DiachiND,array.TuoiND,array.SDTND,array.maND],function(err,updatereutl){
         if(err){
             result(null);
             }

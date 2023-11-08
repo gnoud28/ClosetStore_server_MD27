@@ -2,6 +2,9 @@ const db=require('../common/connect');
 
 const GioHang = function (GioHang) {
     this.MaSPGH = GioHang.MaSPGH;
+    this.maND = GioHang.MaND;
+    this.SizeSPGH = GioHang.SizeSPGH;
+    this.ColorSPGH = GioHang.ColorSPGH;
     this.TenSPGH = GioHang.TenSPGH;
     this.GiaSPGH = GioHang.GiaSPGH;
     this.HinhanhSPGH = GioHang.HinhanhSPGH;
@@ -49,7 +52,7 @@ GioHang.create=function(data,result){
    });
 }
 GioHang.update=function(array,result){
-    db.query("UPDATE GioHang SET TenSPGH=?, GiaSPGH=?,HinhanhSPGH=?,SoLuongSPGH=? WHERE MaSPGH=?", [array.TenSPGH, array.GiaSPGH, array.HinhanhSPGH, array.SoLuongSPGH, array.MaSPGH], function (err, updateResult) {
+    db.query("UPDATE GioHang SET maND=?,SizeSPGH=?,ColorSPGH=?,TenSPGH=?,GiaSPGH=?,HinhanhSPGH=?,SoLuongSPGH=? WHERE MaSPGH=?", [array.maND,array.SizeSPGH,array.ColorSPGH,array.TenSPGH, array.GiaSPGH, array.HinhanhSPGH, array.SoLuongSPGH, array.MaSPGH], function (err, updateResult) {
         if(err){
             result(null);
             }

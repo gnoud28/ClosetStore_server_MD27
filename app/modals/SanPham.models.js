@@ -4,9 +4,12 @@ const SanPham = function (SanPham) {
     this.maSP = SanPham.maSP;
     this.TenSP = SanPham.TenSP;
     this.GiaSP = SanPham.GiaSP;
+    this.SizeSP = SanPham.SizeSP;
+    this.ColorSP = SanPham.ColorSP;
     this.HinhanhSP = SanPham.HinhanhSP;
     this.Mota = SanPham.Mota;
     this.MaLoai = SanPham.MaLoai;
+    this.SoLuong = SanPham.SoLuong;
     this.MaNH = SanPham.MaNH;
 }
 SanPham.get_all = function (result) {
@@ -51,7 +54,7 @@ SanPham.create=function(data,result){
    });
 }
 SanPham.update=function(array,result){
-    db.query("UPDATE SanPham SET TenSP=?, GiaSP=?,HinhanhSP=?,Mota=?,MaLoai=?,MaNH=? WHERE maSP=?", [array.TenSP, array.GiaSP, array.HinhanhSP,array.Mota,array.MaLoai,array.MaNH,array.maSP], function (err, updateResult) {
+    db.query("UPDATE SanPham SET TenSP=?, GiaSP=?,SizeSP=?,ColorSP=?,SoLuong=?,HinhanhSP=?,Mota=?,MaLoai=?,MaNH=? WHERE maSP=?", [array.TenSP,array.GiaSP,array.SizeSP,array.ColorSP,array.SoLuong,array.HinhanhSP,array.Mota,array.MaLoai,array.MaNH,array.maSP], function (err, updateResult) {
         if(err){
             result(null);
             }
