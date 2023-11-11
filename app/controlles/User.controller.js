@@ -25,7 +25,7 @@ exports.remove_Users=function(req,res){
 exports.update_Users=function(req,res){
     var data=req.body;
     Users.update(data,function (respnse){
-        res.send({result:respnse});
+        res.send({data});
     });
 }
 
